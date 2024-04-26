@@ -1,0 +1,4 @@
+- source: dashboard.qmd
+  quarto-pub:
+    - id: fd7b97fe-8ace-409d-8f4c-5d7a164409bb
+      url: 'https://presage.quarto.pub/test'
