@@ -1,0 +1,64 @@
+---
+title: "Test"
+format: dashboard
+theme: sandstone
+resources:
+  - .htaccess
+  - .htpasswd
+---
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(gt)
+```
+
+
+# Page1
+
+## Row {height="25%"}
+
+```{r}
+#| content: valuebox
+#| title: "Number of Participants"
+
+list(
+  icon = "person-fill",
+  color = "primary",
+  value = 50
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Number of Horses"
+
+list(
+  icon = "horse",
+  color = "success",
+  value = 15
+)
+```
+
+## Row {height="75%"}
+
+### Column {width="60%"}
+
+```{r}
+#| title: Table
+
+mtcars |> 
+  arrange(desc(cyl)) |> 
+  gt()
+```
+
+### Column {width="40%"}
+
+```{r}
+#| title: Plot
+
+ggplot(mtcars, aes(disp, mpg)) +
+  geom_point()
+```
